@@ -1,9 +1,10 @@
 import { sign, verify } from 'jsonwebtoken';
+import { User } from '../interfaces/user.interface';
 
 const JWT_SECRET = process.env.JWT_SECRET || 'tokken010101';
 
-const generateToken = (id: string) => {
-  const jwt = sign({ id }, JWT_SECRET, {
+const generateToken = (user: User) => {
+  const jwt = sign({ email: user.email }, JWT_SECRET, {
     expiresIn: '2h',
   });
   return jwt;

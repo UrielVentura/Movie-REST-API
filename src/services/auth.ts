@@ -26,7 +26,7 @@ const loginUser = async ({ email, password }: Auth) => {
   const isCorrect = await verified(password, passwordHash);
 
   if (!isCorrect) return 'PASSWORD_INCORRECT';
-  const token = generateToken(user.email);
+  const token = generateToken(user);
   const data = {
     user: {
       name: user.name,
