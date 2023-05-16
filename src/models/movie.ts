@@ -18,6 +18,12 @@ const MovieSchema = new Schema<Movie>(
       type: Boolean,
       default: false,
     },
+    comments: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'Review',
+      },
+    ],
   },
   {
     timestamps: true,

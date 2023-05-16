@@ -20,6 +20,6 @@ const ReviewSchema = new Schema<Review>(
   }
 );
 
-const ReviewModel = model('movies', ReviewSchema);
+const ReviewModel = model('reviews', ReviewSchema);
 
 export default ReviewModel;

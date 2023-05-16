@@ -10,4 +10,13 @@ const insertMovie = async (item: InserMovie) => {
   return insertedMovie;
 };
 
-export { insertMovie };
+const appoveAMovie = async (id: string) => {
+  const movie = await MovieModel.findByIdAndUpdate(
+    { _id: id },
+    { approved: true },
+    { new: true }
+  );
+  return movie;
+};
+
+export { insertMovie, appoveAMovie };

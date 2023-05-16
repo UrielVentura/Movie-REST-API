@@ -1,5 +1,9 @@
 import { Router } from 'express';
-import { addMovieCtrl, getAllMoviesCtrl } from '../controllers/movies';
+import {
+  addMovieCtrl,
+  approveMovieCtrl,
+  getAllMoviesCtrl,
+} from '../controllers/movies';
 import { checkJwt } from '../middleware/session';
 import { RoleMiddelware } from '../middleware/roles';
 
@@ -12,6 +16,13 @@ router.post(
   checkJwt,
   RoleMiddelware(['admin', 'user']),
   addMovieCtrl
+);
+
+router.patch(
+  '/approvedmovie/:id',
+  checkJwt,
+  RoleMiddelware(['admin']),
+  approveMovieCtrl
 );
 
 export { router };
