@@ -13,6 +13,7 @@ const checkJwt = (req: RequestExt, res: Response, next: NextFunction) => {
       res.send('Dont have a Valid JWT');
     }
     req.user = isUser;
+    console.log('JWT ✅');
     next();
   } catch (e) {
     res.status(400);

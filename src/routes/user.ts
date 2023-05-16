@@ -5,7 +5,7 @@ import { checkJwt } from '../middleware/session';
 
 const router = Router();
 
-router.get('/', checkJwt, RoleMiddelware('admin'), getAllUsersCtrl);
-router.get('/:id', checkJwt, RoleMiddelware('admin'), getUserCtrl);
+router.get('/', checkJwt, RoleMiddelware(['admin']), getAllUsersCtrl);
+router.get('/:id', checkJwt, RoleMiddelware(['admin']), getUserCtrl);
 
 export { router };

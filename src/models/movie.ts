@@ -14,6 +14,10 @@ const MovieSchema = new Schema<Movie>(
     addedByUser: {
       type: String,
     },
+    approved: {
+      type: Boolean,
+      default: false,
+    },
   },
   {
     timestamps: true,

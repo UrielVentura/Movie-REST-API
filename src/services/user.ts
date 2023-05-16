@@ -7,7 +7,6 @@ const getAllUsers = async () => {
 
 const getAUser = async (id: string) => {
   const response = await UserModel.findById({ _id: id });
-  console.log('response', response);
   return response;
 };
 

@@ -15,7 +15,6 @@ const getUserCtrl = async (req: Request, res: Response) => {
   try {
     const { id } = req.params;
     const response = await getAUser(id);
-    console.log('response', response);
     res.send(response);
   } catch (e) {
     res.status(500).json({ erro: 'Server Error' });
